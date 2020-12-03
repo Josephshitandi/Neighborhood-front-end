@@ -19,14 +19,13 @@ import {environment} from '../environments/environment'
   providedIn: 'root'
 })
 
+// export class BusinessService {
+//   business:Businessclass
+
+//   constructor() { }
+// }
 export class BusinessService {
   business:Businessclass
-
-  constructor() { }
-}
-export class HoodService {
-  hood:Hoodclass
-
 
   constructor(private http:HttpClient) { }
 
