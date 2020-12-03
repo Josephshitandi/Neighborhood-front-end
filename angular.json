@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Neighborhood"
+    }
+  },
+  "defaultProject": "Neighborhood",
+  "cli": {
+    "analytics": "0b1e7f3f-b45c-4624-8e9e-19fdf3bd6c66"
+  }
 }
