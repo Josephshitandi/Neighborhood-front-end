@@ -11,7 +11,7 @@
 
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Businessclass} from './ businessclass'
+import { Businessclass} from './businessclass';
 import { Observable } from 'rxjs';
 import {environment} from '../environments/environment'
 
