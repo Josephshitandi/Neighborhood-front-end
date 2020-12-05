@@ -9,7 +9,7 @@ import { Neighborhood } from '../neighborhood';
 })
 export class NeighborhoodServiceService {
   private apiRoot = 'https://shitandi-neighborhood.herokuapp.com/Neighborhood/';
-  private httpHeaders = new HttpHeaders({'content-Type': 'application/json'});
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json', "Authorization": "Token b0615be3e14b70e6fa8ae2f23f0df1a9227efe6f"});
 
   constructor(private http: HttpClient) {}
 
@@ -36,18 +36,18 @@ export class NeighborhoodServiceService {
   }
 
 
-  // getNeighborhoods(): Observable<Neighborhood[]> {
-  //   return this.http.get<Neighborhood[]>(this.apiRoot,{headers:this.httpHeaders}).pipe(
-  //     tap((_) => {
-  //       console.log('fetched Neighborhoods');
-  //     }),
-  //     catchError(this.handleError<Neighborhood[]>('', []))
-  //   );
-  // }
-
-  getNeighborhoods(){
-   let results = this.http.get(this.apiRoot,{headers:this.httpHeaders});
-   console.log("My results",results)
-    return results;
+  getNeighborhoods(): Observable<Neighborhood[]> {
+    return this.http.get<Neighborhood[]>(this.apiRoot,{headers:this.httpHeaders}).pipe(
+      tap((_) => {
+        console.log('fetched Neighborhoods');
+      }),
+      catchError(this.handleError<Neighborhood[]>('', []))
+    );
   }
+
+  // getNeighborhoods(){
+  //  let results = this.http.get(this.apiRoot,{headers:this.httpHeaders});
+  //  console.log("My results",results)
+  //   return results;
+  // }
 }

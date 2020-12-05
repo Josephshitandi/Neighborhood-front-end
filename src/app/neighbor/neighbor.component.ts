@@ -13,11 +13,23 @@ export class NeighborComponent implements OnInit {
   // hood: Neighborhood;
   hoods = [];
   http;
+  error: any;
 
 
   constructor(private hoodservice: HoodService, http:HttpClient) {
     this.http = http;
    }
+
+   addNeighborhood(name: string, location: string, admin: any) {
+    console.log('name, location, admin ', name, location, admin);
+
+    this.hoodservice.createNeighborhood(name, location, admin).subscribe(
+      (success) => {
+        alert('hood create success');
+      },
+      (error) => ((this.error = error), alert('hood create error'))
+    );
+  }
 
   ngOnInit(): void {
     this.hoodservice.getHoodList().subscribe((res: Response) => {

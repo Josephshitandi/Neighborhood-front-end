@@ -25,12 +25,12 @@ export class HoodsComponent implements OnInit {
     );
   }
 
-  getNeighborhoods(): void {
-    this.neighborhoodService.getNeighborhoods().subscribe((data: Neighborhood[]) => {
-      this.neighborhoods = data;
-      console.log('this.neighborhoods', this.neighborhoods);
-    });
-  }
+  // getNeighborhoods(): void {
+  //   this.neighborhoodService.getNeighborhoods().subscribe((data: Neighborhood[]) => {
+  //     this.neighborhoods = data;
+  //     console.log('this.neighborhoods', this.neighborhoods);
+  //   });
+  // }
 
   constructor(
     // public logoutService: LogoutService,
@@ -38,22 +38,22 @@ export class HoodsComponent implements OnInit {
     private _route: ActivatedRoute
   ) {}
 
+  // ngOnInit(): void {
+  //   this.neighborhoods = this._route.snapshot.data.resolvedNeighborhoods || [];
+
+  //   // this.logoutService.currentlogoutState.subscribe((logoutData) => {
+  //   //   console.log('logoutData ', logoutData);
+  //   // });
+
+  //   // this.getTodos();
+  // }
+
   ngOnInit(): void {
-    this.neighborhoods = this._route.snapshot.data.resolvedNeighborhoods || [];
-
-    // this.logoutService.currentlogoutState.subscribe((logoutData) => {
-    //   console.log('logoutData ', logoutData);
-    // });
-
-    // this.getTodos();
+    this.neighborhoodService.getNeighborhoods()
+      .subscribe((response:any)=>{
+      this.neighborhoods=response.data;
+    });
   }
-
-//   ngOnInit(): void {
-//     this.neighborhoodService.getNeighborhoods()
-//       .subscribe((response:any)=>{
-//       this.neighborhoods=response.data;
-//     });
-//   }
 
 
 

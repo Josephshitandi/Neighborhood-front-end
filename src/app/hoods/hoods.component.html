@@ -1,45 +1,42 @@
 <div class="row mt-5">
-    <div class="col-md-6">
-      <h3>Add Neighborhood</h3>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Name</label>
-          <input #name type="text" class="form-control" id="name" />
-        </div>
-        <div class="form-group">
-          <label for="owner">Location</label>
-          <input #location type="text" class="form-control" id="location" />
-        </div>
-        <div class="form-group">
-          <input #admin type="text" class="form-control" id="admin" />
-          <label class="form-group" for="done">Admin</label>
-        </div>
-        <button
-          type="button"
-          (click)="addNeighborhood(name.value, location.value, admin.value)"
-          class="btn btn-primary"
-        >
-          Submit Neighborhood
-        </button>
-      </form>
-    </div>
-    <div class="col-md-6">
-      <h3>My Neighborhoods</h3>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Admin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let neighborhood of neighborhoods; index as i">
-            <td>{{ neighborhood.name }}</td>
-            <td>{{ neighborhood.location }}</td>
-            <td>{{ neighborhood.admin }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col-md-6">
+    <h3>Add Neighborhood</h3>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input #name type="text" class="form-control" id="name" />
+      </div>
+      <div class="form-group">
+        <label for="owner">Location</label>
+        <input #location type="text" class="form-control" id="location" />
+      </div>
+      <div class="form-group">
+        <input #admin type="text" class="form-control" id="admin" />
+        <label class="form-group" for="done">Admin</label>
+      </div>
+      <button type="button" (click)="addNeighborhood(name.value, location.value, admin.value)" class="btn btn-primary">
+        Submit Neighborhood
+      </button>
+    </form>
   </div>
+  <div class="col-md-6">
+    <h3>My Neighborhoods</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Location</th>
+          <th scope="col">Admin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let neighborhood of neighborhoods; index as i">
+          <td>{{ neighborhood.name }}</td>
+          <td>{{ neighborhood.location }}</td>
+          <td>{{ neighborhood.admin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
