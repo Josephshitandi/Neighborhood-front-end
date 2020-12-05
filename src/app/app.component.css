@@ -22,4 +22,10 @@ ul {
   li a:hover {
     background-color: #111;
   }
-  
+  p{
+      font-size: large;
+      color:black;
+      font-style: italic;
+      text-align: center;
+      font-size: 30px;
+  }
