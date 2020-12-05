@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import jwtDecode from 'jwt-decode';
 import * as moment from 'moment';
-import { JWTPayload } from './jwtpayload'
+import { JWTPayload } from '../models/jwtpayload'
 import { tap, shareReplay } from 'rxjs/operators';
 
 @Injectable({

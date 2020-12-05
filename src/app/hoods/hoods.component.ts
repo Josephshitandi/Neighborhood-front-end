@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-import { Neighborhood } from '../neighborhood'
+import { Neighborhood } from '../models/neighborhood'
 import { ActivatedRoute } from '@angular/router';
-import {NeighborhoodServiceService } from '../neighborhood/neighborhood-service.service'
+import {NeighborhoodServiceService } from '../services/neighborhood-service.service'
 
 @Component({
   selector: 'app-hoods',
@@ -25,12 +25,12 @@ export class HoodsComponent implements OnInit {
     );
   }
 
-  // getNeighborhoods(): void {
-  //   this.neighborhoodService.getNeighborhoods().subscribe((data: Neighborhood[]) => {
-  //     this.neighborhoods = data;
-  //     console.log('this.neighborhoods', this.neighborhoods);
-  //   });
-  // }
+  getNeighborhoods(): void {
+    this.neighborhoodService.getNeighborhoods().subscribe((data: Neighborhood[]) => {
+      this.neighborhoods = data;
+      console.log('this.neighborhoods', this.neighborhoods);
+    });
+  }
 
   constructor(
     // public logoutService: LogoutService,
@@ -38,22 +38,22 @@ export class HoodsComponent implements OnInit {
     private _route: ActivatedRoute
   ) {}
 
-  // ngOnInit(): void {
-  //   this.neighborhoods = this._route.snapshot.data.resolvedNeighborhoods || [];
-
-  //   // this.logoutService.currentlogoutState.subscribe((logoutData) => {
-  //   //   console.log('logoutData ', logoutData);
-  //   // });
-
-  //   // this.getTodos();
-  // }
-
   ngOnInit(): void {
-    this.neighborhoodService.getNeighborhoods()
-      .subscribe((response:any)=>{
-      this.neighborhoods=response.data;
-    });
+    this.neighborhoods = this._route.snapshot.data.resolvedNeighborhoods || [];
+
+    // this.logoutService.currentlogoutState.subscribe((logoutData) => {
+    //   console.log('logoutData ', logoutData);
+    // });
+
+    // this.getTodos();
   }
+
+  // ngOnInit(): void {
+  //   this.neighborhoodService.getNeighborhoods()
+  //     .subscribe((response:any)=>{
+  //     this.neighborhoods=response.data;
+  //   });
+  // }
 
 
 

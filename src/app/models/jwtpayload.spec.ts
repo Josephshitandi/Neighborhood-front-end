@@ -1,4 +1,4 @@
-import { Jwtpayload } from './jwtpayload';
+import { Jwtpayload } from '../models/jwtpayload';
 
 describe('Jwtpayload', () => {
   it('should create an instance', () => {

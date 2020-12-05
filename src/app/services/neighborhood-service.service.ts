@@ -2,14 +2,14 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, catchError, shareReplay } from 'rxjs/operators';
-import { Neighborhood } from '../neighborhood';
+import { Neighborhood } from '../models/neighborhood';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NeighborhoodServiceService {
-  private apiRoot = 'https://shitandi-neighborhood.herokuapp.com/Neighborhood/';
-  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json', "Authorization": "Token b0615be3e14b70e6fa8ae2f23f0df1a9227efe6f"});
+  private apiRoot = 'https://shitandi-neighborhood.herokuapp.com/api/v1/Neighborhood/';
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json', "Authorization": "Token 453d5bf4b8a7d3b237807828572598d4484b1445"});
 
   constructor(private http: HttpClient) {}
 
@@ -27,7 +27,7 @@ export class NeighborhoodServiceService {
   }
 
   createNeighborhood(name: string, location: string, admin: any) {
-    return this.http.post(this.apiRoot, { name, location, admin, headers:this.httpHeaders }).pipe(
+    return this.http.post(this.apiRoot, { name, location, admin},{ headers:this.httpHeaders }).pipe(
       tap((response) => {
         console.log('createNeighborhood response ', response);
       }),

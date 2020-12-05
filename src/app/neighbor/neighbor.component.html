@@ -33,20 +33,29 @@
 
     <div class="col-md-6">
         <h3>Add Neighborhood</h3>
-        <form>
+        <form id="get-form" class="form" method="POST">
           <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input #name type="text" class="form-control" id="name" />
+              <input [(ngModel)]="hood.name" type="text"  class="form-control" name="name" id="name" autocomplete="off"
+                  placeholder=" " required />
+              <label   for="name" class="label-hoodname">
+                  <span class="content-first_name">Hood Name</span>
+              </label>
           </div>
           <div class="form-group">
-            <label for="owner">Location</label>
-            <input #location type="text" class="form-control" id="location" />
+              <input [(ngModel)]="hood.location" type="text"  class="form-control" name="location" id="location" autocomplete="off"
+                  placeholder=" " required />
+              <label   for="location" class="label-location">
+                  <span class="content-last_name">Location</span>
+              </label>
           </div>
           <div class="form-group">
-            <input #admin type="text" class="form-control" id="admin" />
-            <label class="form-group" for="done">Admin</label>
+              <input [(ngModel)]="hood.admin" type="number"   class="form-control" name="admin" id="admin" autocomplete="off" placeholder=" "
+                  required />
+              <label for="admin" class="label-email">
+                  <span class="content-email">Admin</span>
+              </label>
           </div>
-          <button type="button" (click)="addNeighborhood(name.value, location.value, admin.value)" class="btn btn-primary">
+          <button type="button" (click)="addNeighborhood()" class="btn btn-primary">
             Submit Neighborhood
           </button>
         </form>

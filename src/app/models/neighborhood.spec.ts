@@ -1,4 +1,4 @@
-import { Neighborhood } from './neighborhood';
+import { Neighborhood } from '../models/neighborhood';
 
 describe('Neighborhood', () => {
   it('should create an instance', () => {

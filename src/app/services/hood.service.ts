@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Neighborhood} from './neighborhood';
+import {Neighborhood} from '../models/neighborhood';
 import { Observable } from 'rxjs';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { tap, catchError, shareReplay } from 'rxjs/operators';
@@ -14,13 +14,9 @@ export class HoodService {
 
   constructor(private http:HttpClient) { }
 
-  createNeighborhood(name: string, location: string, admin: any) {
-    return this.http.post('https://shitandi-neighborhood.herokuapp.com/api/v1/Neighborhood/', { name, location, admin, headers:this.httpHeaders }).pipe(
-      tap((response) => {
-        console.log('createNeighborhood response ', response);
-      }),
-      shareReplay()
-    );
+  createNeighborhood(hood): Observable<any> {
+    return this.http.post('https://shitandi-neighborhood.herokuapp.com' + '/api/v1/Neighborhood/', hood,
+    {headers: this.httpHeaders})
   }
 
 

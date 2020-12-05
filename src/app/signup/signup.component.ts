@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HoodService } from '../hood.service'
+import {HoodService } from '../services/hood.service'
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   signupUser(){
     this.UserService.AddUser(this.signup).subscribe(
       response => {
-        alert('user' + this.signup.username + 'has been created')
+        alert('user' + this.signup.username + ' has been created')
       },
       error => console.log('error', error)
     )
