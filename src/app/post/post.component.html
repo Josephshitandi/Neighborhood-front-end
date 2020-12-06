@@ -1,1 +1,93 @@
-<p>post works!</p>
+<div class="container-fluid">
+    <h3>View Posts</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6 pt-3" *ngFor="let post of posts">
+            <!-- Card -->
+            <div class="card">
+              <!-- Card image -->
+              <img class="card-img-top" src="https://res.cloudinary.com/dzvafknwk/{{post.photo}}" alt="Card image cap"
+                class="img-fluid">
+              <!-- Card content -->
+              <div class="card-body">
+                <!-- Title -->
+                <h4 class="">{{post.title}}</h4>
+                <!-- Text -->
+                <div class="row">
+                  <div class="col-sm">
+                    <p>User</p>
+                  </div>
+                  <div class="col-sm">
+                    <p>{{post.user}}</p>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                      <p>Neighborhood</p>
+                    </div>
+                    <div class="col-sm">
+                      <p>{{post.neighbourhood}}</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <p>Neighborhood</p>
+                    </div>
+                    <div class="col-sm">
+                      <p>{{post.text}}</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- Card -->
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+          <h3>Add Post</h3>
+          <form id="get-form" class="form" method="POST">
+            <div class="form-group">
+                <input [(ngModel)]="post.title" type="text"  class="form-control" name="title" id="title" autocomplete="off"
+                    placeholder=" " required />
+                <label   for="name" class="label-postname">
+                    <span class="content-first_name">post Title</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="post.neighbourhood" type="number"  class="form-control" name="neighbourhood" id="neighbourhood" autocomplete="off"
+                    placeholder=" " required />
+                <label   for="neighbourhood" class="label-neighbourhood">
+                    <span class="content-last_name">neighbourhood</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="post.user" type="number"   class="form-control" name="user" id="user" autocomplete="off" placeholder=" "
+                    required />
+                <label for="user" class="label-email">
+                    <span class="content-email">user</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="post.text" type="text"   class="form-control" name="text" id="text" autocomplete="off" placeholder=" "
+                    required />
+                <label for="text" class="label-email">
+                    <span class="content-email">Post</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="post.image" type="text"   class="form-control" name="image" id="image" autocomplete="off" placeholder=" "
+                    required />
+                <label for="image" class="label-email">
+                    <span class="content-email">Image</span>
+                </label>
+            </div>
+            
+            <button type="button" (click)="addPost()" class="btn btn-primary">
+              Post
+            </button>
+          </form>
+        </div>
+  </div>
+  

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(username, password).subscribe(
       (success) => {
         this.logoutService.changeLogoutState(false);
-        this.router.navigate(['/index']);
+        this.router.navigate(['/hood']);
       },
       (error) => (this.error = error)
     );

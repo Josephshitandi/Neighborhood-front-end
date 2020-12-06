@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { title } from 'process';
 import { Post} from '../models/post'
+import {HttpClient} from '@angular/common/http';
+import { PostService} from '../services/post.service'
 
 @Component({
   selector: 'app-post',
@@ -8,21 +10,21 @@ import { Post} from '../models/post'
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  hoods = [];
+  posts = [];
   http;
   error: any;
-  hood;
+  post;
 
 
-  constructor(private hoodservice: HoodService, http:HttpClient) {
+  constructor(private postservice: PostService, http:HttpClient) {
     this.http = http;
    }
 
-   addNeighborhood() {
+   addPost() {
    
-   this.hoodservice.createNeighborhood(this.hood).subscribe(
+   this.postservice.createPost(this.post).subscribe(
     response => {
-      alert('Neighborhood ' +  ' has been created')
+      alert('Post ' +  ' has been submitted succesfully')
     },
     error => console.log('error', error)
   )
@@ -31,8 +33,8 @@ export class PostComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.hood = {name:"",location:"",admin:""}
-    this.hoodservice.getPosts().subscribe((res: Response) => {
+    this.post = {title:"",user:"",neighbourhood:"",text:"",image:""}
+    this.postservice.getPost().subscribe((res: Response) => {
       console.log(res)
       Object.entries(res).forEach(result => {
       const [_, value] = result;
@@ -42,7 +44,7 @@ export class PostComponent implements OnInit {
        let text = value['text'];
        let image = value['image'];
        let hoodObject = new Post(title,user,neighbourhood,text,image)
-       this.hoods.push(hoodObject)
+       this.posts.push(hoodObject)
       });
     });
   }
