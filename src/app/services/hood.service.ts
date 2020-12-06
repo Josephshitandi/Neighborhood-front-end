@@ -20,16 +20,6 @@ export class HoodService {
   }
 
 
-  // createNeighborhood(name: string, location: string, admin: any):Observable<any>{
-  //   interface ApiResponse{
-  //     name:string
-  //     location:string
-  //     admin:number
-  //   }
-  //   return this.http.get<ApiResponse>('https://shitandi-neighborhood.herokuapp.com/Neighborhood/', { location, admin});
-  // }
-
-
   getHoodList():Observable<any>{
     interface ApiResponse{
       name:string

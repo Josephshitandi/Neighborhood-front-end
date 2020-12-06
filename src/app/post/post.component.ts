@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Neighborhood} from '../models/neighborhood'
-import { Observable } from 'rxjs';
-import { HoodService } from '../services/hood.service';
+import { title } from 'process';
+import { Post} from '../models/post'
 
 @Component({
-  selector: 'app-neighbor',
-  templateUrl: './neighbor.component.html',
-  styleUrls: ['./neighbor.component.css']
+  selector: 'app-post',
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.css']
 })
-export class NeighborComponent implements OnInit {
+export class PostComponent implements OnInit {
   hoods = [];
   http;
   error: any;
@@ -34,14 +32,16 @@ export class NeighborComponent implements OnInit {
 
   ngOnInit(): void {
     this.hood = {name:"",location:"",admin:""}
-    this.hoodservice.getHoodList().subscribe((res: Response) => {
+    this.hoodservice.getPosts().subscribe((res: Response) => {
       console.log(res)
       Object.entries(res).forEach(result => {
       const [_, value] = result;
-       let name = value['name'];
-       let location = value['location'];
-       let admin = value['admin'];
-       let hoodObject = new Neighborhood(name,location,admin)
+       let title = value['title'];
+       let user = value['user'];
+       let neighbourhood = value['neighbourhood'];
+       let text = value['text'];
+       let image = value['image'];
+       let hoodObject = new Post(title,user,neighbourhood,text,image)
        this.hoods.push(hoodObject)
       });
     });

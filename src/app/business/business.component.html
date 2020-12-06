@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <h3>View businesss</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6 pt-3" *ngFor="let business of businesss">
+            <!-- Card -->
+            <div class="card">
+              <!-- Card image -->
+              <img class="card-img-top" src="https://res.cloudinary.com/dzvafknwk/{{business.business_profile}}" alt="Card image cap"
+                class="img-fluid">
+              <!-- Card content -->
+              <div class="card-body">
+                <!-- Title -->
+                <h4 class="">{{business.business_name}}</h4>
+                <!-- Text -->
+                <div class="row">
+                  <div class="col-sm">
+                    <p>User</p>
+                  </div>
+                  <div class="col-sm">
+                    <p>{{business.user}}</p>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                      <p>Neighborhood</p>
+                    </div>
+                    <div class="col-sm">
+                      <p>{{business.neighbourhood}}</p>
+                    </div>
+                  </div>
+                <div class="row">
+                    <div class="col-sm">
+                      <p>Email</p>
+                    </div>
+                    <div class="col-sm">
+                      <p>{{business.business_email}}</p>
+                    </div>
+                  </div>
+                <!-- Button -->
+                <a href="#" class="btn btn-primary">View Posts here</a>
+              </div>
+            </div>
+            <!-- Card -->
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+          <h3>Add Business</h3>
+          <form id="get-form" class="form" method="POST">
+            <div class="form-group">
+                <input [(ngModel)]="business.business_name" type="text"  class="form-control" name="name" id="name" autocomplete="off"
+                    placeholder=" " required />
+                <label   for="name" class="label-business_name">
+                    <span class="content-first_name">business Name</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="business.user" type="number"  class="form-control" name="user" id="user" autocomplete="off"
+                    placeholder=" " required />
+                <label   for="user" class="label-user">
+                    <span class="content-last_name">user</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="business.neighbourhood" type="number"  class="form-control" name="neighbourhood" id="neighbourhood" autocomplete="off"
+                    placeholder=" " required />
+                <label   for="Neighborhood" class="label-user">
+                    <span class="content-last_name">Neighborhood</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="business.email" type="email"   class="form-control" name="email" id="email" autocomplete="off" placeholder=" "
+                    required />
+                <label for="email" class="label-email">
+                    <span class="content-email">email</span>
+                </label>
+            </div>
+            <button type="button" (click)="addBusiness()" class="btn btn-primary">
+              Submit Business
+            </button>
+          </form>
+        </div>
+  </div>

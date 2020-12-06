@@ -10,6 +10,8 @@ import { NeighborComponent } from './neighbor/neighbor.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { BusinessComponent } from './business/business.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SignupComponent } from './signup/signup.component';
     AuthComponent,
     LoginComponent,
     SignupComponent,
+    BusinessComponent,
+    PostComponent,
     
   
   ],
