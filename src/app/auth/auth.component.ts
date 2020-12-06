@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit {
   onLogin() {
     this.loginservice.login(this.input).subscribe((res: Response) => {
       localStorage.setItem('accessToken', res['access'])
-      this.rouuter.navigate(['hood/'])
+      this.rouuter.navigate(['home/'])
       // console.log(res['access'])
     }, error => {
       console.log('error')

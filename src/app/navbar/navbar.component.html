@@ -1,37 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-        <img src="images/logo2.jpeg" giualt="image" class="first">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto" id="f">
-            <li class="nav-item active">
-              <a class="nav-link waves-effect waves-light p-3 " href="#">Home <span
-                  class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light p-3" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light p-3" href="#">Neighbourhood</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light  p-3" href="#">Sigh-Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link waves-effect waves-light p-3" href="#">Login</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-</body>
-</html>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <a class="navbar-brand" href="">SUNRISE NEIGHBOURHOOD</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/hood">Neighborhood</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/signup">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">About Us</a>
+      </li>
+
+    </ul>
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+    </form>
+  </div>
+</nav>
