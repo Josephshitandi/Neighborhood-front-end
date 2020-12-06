@@ -8,7 +8,7 @@
 
 export const environment = {
   production: false,
-  businessEndpoint: "https://shitandi-neighborhood.herokuapp.com/Business/",
+  businessEndpoint:  "https://shitandi-neighborhood.herokuapp.com/api/v1/Business/",
 };
 
 /*

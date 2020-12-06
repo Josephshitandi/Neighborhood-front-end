@@ -33,10 +33,10 @@ export class BusinessService {
   getBusinessList():Observable<any>{
     interface ApiResponse{
       business_name:string
-      user:string
-      neighbourhood:string
+      user:number
+      neighbourhood:number
       business_email:string
     }
-    return this.http.get<ApiResponse>(environment.  businessEndpoint);
+    return this.http.get<ApiResponse>(environment.businessEndpoint);
   }
 }
