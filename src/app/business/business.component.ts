@@ -26,8 +26,8 @@ export class BusinessComponent implements OnInit {
         const[_,value] = result;
         let business_name = value ['business_name'];
         let user = value ['user'];
-        let neighbourhood = ['neighbourhood'];
-        let business_email = ['business_email'];
+        let neighbourhood = value ['neighbourhood'];
+        let business_email = value ['business_email'];
         let businessObject = new Businessclass(business_name,user,neighbourhood,business_email)
         this.businesses.push(businessObject)
       });
