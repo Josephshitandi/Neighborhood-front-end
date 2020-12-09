@@ -41,7 +41,9 @@ export class NeighborComponent implements OnInit {
        let name = value['name'];
        let location = value['location'];
        let admin = value['admin'];
-       let hoodObject = new Neighborhood(name,location,admin)
+       let image = value['image'];
+       let count = value['occupantCount'];
+       let hoodObject = new Neighborhood(name,image,location,admin,count)
        this.hoods.push(hoodObject)
       });
     });
