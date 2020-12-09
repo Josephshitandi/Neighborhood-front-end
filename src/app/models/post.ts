@@ -1,8 +1,8 @@
 export class Post {
     constructor(
         public title: string,
-        public user: number,
-        public neighbourhood: number,
+        public user: string,
+        public neighbourhood: string,
         public text: string,
         public image: string
       ){}

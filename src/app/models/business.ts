@@ -1,8 +1,8 @@
 export class Business {
     constructor(
         public business_name: string,
-        public user: number,
-        public neighbourhood: number,
+        public user: string,
+        public neighbourhood: string,
         public business_email: string,
         public business_profile: string
       ){}

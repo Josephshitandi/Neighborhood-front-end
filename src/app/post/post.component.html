@@ -13,14 +13,6 @@
               <!-- Text -->
               <div class="row">
                 <div class="col-sm">
-                  <p>User</p>
-                </div>
-                <div class="col-sm">
-                  <p>{{post.user}}</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm">
                   <p>Neighborhood</p>
                 </div>
                 <div class="col-sm">
@@ -29,7 +21,7 @@
               </div>
               <div class="row">
                 <div class="col-sm">
-                  <p>Neighborhood</p>
+                  <p>Post</p>
                 </div>
                 <div class="col-sm">
                   <p>{{post.text}}</p>
@@ -58,7 +50,7 @@
           </label>
         </div>
         <div class="form-group">
-          <input [(ngModel)]="post.user" type="number" class="form-control" name="user" id="user" autocomplete="off"
+          <input [(ngModel)]="post.user" type="text" class="form-control" name="user" id="user" autocomplete="off"
             placeholder=" " required />
           <label for="user" class="label-email">
             <span class="content-email">user</span>
